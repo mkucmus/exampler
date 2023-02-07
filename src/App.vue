@@ -28,7 +28,7 @@ const openExample = () => {
       functionName: functionName.value,
       isAsync: isAsync.value,
     }),
-    { newWindow: true, clickToLoad: true }
+    { newWindow: false }
   );
 };
 
