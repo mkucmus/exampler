@@ -60,16 +60,22 @@ export function getStackBlitzProjectConfig({
   };
 
   const INDEX_TS_TEMPLATE = () => `
+// import function from package
 import { ${functionName} } from "${packageName}";
 
 async function runTest() {
   const outputContainer = document.getElementById("output");
   try {
-    const ${!multiImport ? 'result' : destructureImports()} = ${
-    isAsync ? 'await ' : ''
-  }${getFunctionToRun()}(${paramsConfig ? JSON.stringify(paramsConfig) : ''});
+
+    // run function
+    const ${!multiImport ? "result" : destructureImports()} = ${
+    isAsync ? "await " : ""
+  }${getFunctionToRun()}(${paramsConfig ? JSON.stringify(paramsConfig) : ""});
   
+    // display result in predefined container
     outputContainer.innerText = JSON.stringify(result, null, 2);
+
+    
   } catch (error) {
     console.error('An error occured while running example: ', error);
     outputContainer.innerText = "An error occured. Check the debug console to see the details.";
