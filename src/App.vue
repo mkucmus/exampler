@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { computed, unref, onMounted } from 'vue';
+import { computed, onMounted } from 'vue';
 import { getStackBlitzProjectConfig } from './helpers';
-import HelloWorld from './components/HelloWorld.vue';
 import sdk from '@stackblitz/sdk';
 import { useRoute } from 'vue-router';
 // Import stylesheets
@@ -10,7 +9,7 @@ import './style.css';
 const route = useRoute();
 
 const packageName = computed(
-  () => route.query.packageName || '@shopware-pwa/shopware-6-client'
+  () => route.query.packageName || '@shopware-pwa/api-client'
 );
 
 const packageVersion = computed(() => route.query.packageVersion || 'latest');
@@ -31,7 +30,7 @@ const openExample = () => {
     { newWindow: false }
   );
 };
-
+// timeout to get the URL params
 onMounted(() => setTimeout(openExample, 500));
 </script>
 
@@ -47,7 +46,6 @@ onMounted(() => setTimeout(openExample, 500));
       }
     }}</pre>
   </div>
-  <!-- <div><button @click="openExample">Click to load</button></div> -->
 </template>
 
 <style>
