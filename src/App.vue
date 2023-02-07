@@ -18,7 +18,7 @@ const functionName = computed(
   () => route.query.functionName || 'getSessionContext'
 );
 
-const isAsync = computed(() => !!route.query.async);
+const isAsync = computed(() => route.query.async);
 
 const openExample = () => {
   sdk.openProject(
