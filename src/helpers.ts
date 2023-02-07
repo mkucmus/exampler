@@ -68,6 +68,7 @@ async function runTest() {
   try {
 
     // run function
+    // check params if needed
     const ${!multiImport ? "result" : destructureImports()} = ${
     isAsync ? "await " : ""
   }${getFunctionToRun()}(${paramsConfig ? JSON.stringify(paramsConfig) : ""});
@@ -75,7 +76,7 @@ async function runTest() {
     // display result in predefined container
     outputContainer.innerText = JSON.stringify(result, null, 2);
 
-    
+
   } catch (error) {
     console.error('An error occured while running example: ', error);
     outputContainer.innerText = "An error occured. Check the debug console to see the details.";
