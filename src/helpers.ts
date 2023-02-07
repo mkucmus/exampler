@@ -49,7 +49,7 @@ async function runTest() {
   const outputContainer = document.getElementById("output");
   try {
     const ${!multiImport ? 'result' : destructureImports()} = ${
-    isAsync || multiImport ? 'await ' : ''
+    isAsync ? 'await ' : ''
   }${getFunctionToRun()}(${paramsConfig ? JSON.stringify(paramsConfig) : ''});
   
     outputContainer.innerText = JSON.stringify(result, null, 2);
