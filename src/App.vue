@@ -32,7 +32,7 @@ const openExample = () => {
   );
 };
 
-onMounted(() => openExample());
+onMounted(() => setTimeout(() => openExample(), 500);
 </script>
 
 <template>
