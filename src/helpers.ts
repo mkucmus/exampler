@@ -79,7 +79,10 @@ async function runTest() {
 
   } catch (error) {
     console.error('An error occured while running example: ', error);
-    outputContainer.innerText = "An error occured. Check the debug console to see the details.";
+    outputContainer.innerText = \`
+An error occured.
+
+Check the debug console to see the details.\`;
   }
 }
 
